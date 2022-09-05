@@ -1,0 +1,42 @@
+{
+    "name": "// TODO: Change me",
+    "version": "0.1.0",
+    "description": "// TODO: Change me",
+    "license": "// TODO: Change me",
+    "type": "module",
+    "exports": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "// TODO: Change me"
+    },
+    "scripts": {
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --passWithNoTests",
+        "test:coverage": "npm run test -- --coverage --passWithNoTests",
+        "lint:fix": "npm run lint -- --fix",
+        "lint": "eslint --ext .js .",
+        "lint-staged": "lint-staged",
+        "prepare": "husky install"
+    },
+    "author": {
+        "email": "// TODO: Change me",
+        "name": "// TODO: Change me",
+        "url": "// TODO: Change me"
+    },
+    "keywords": [
+        "// TODO: Change me"
+    ],
+    "devDependencies": {
+        "@types/jest": "^28.1.8",
+        "eslint": "^8.23.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-jsdoc": "^39.3.6",
+        "husky": "^8.0.1",
+        "jest": "^28.1.3",
+        "lint-staged": "^13.0.3"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint"
+        ]
+    }
+}
