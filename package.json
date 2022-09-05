@@ -1,13 +1,13 @@
 {
-    "name": "// TODO: Change me",
+    "name": "akronim",
     "version": "0.1.0",
-    "description": "// TODO: Change me",
-    "license": "// TODO: Change me",
+    "description": "An acronym generator with useful options.",
+    "license": "MIT",
     "type": "module",
     "exports": "./index.js",
     "repository": {
         "type": "git",
-        "url": "// TODO: Change me"
+        "url": "https://github.com/ozgurg/akronim"
     },
     "scripts": {
         "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --passWithNoTests",
@@ -18,12 +18,14 @@
         "prepare": "husky install"
     },
     "author": {
-        "email": "// TODO: Change me",
-        "name": "// TODO: Change me",
-        "url": "// TODO: Change me"
+        "email": "ozgurgorgulu54@gmail.com",
+        "name": "Özgür Görgülü",
+        "url": "https://github.com/ozgurg"
     },
     "keywords": [
-        "// TODO: Change me"
+        "acronym",
+        "akronim",
+        "generator"
     ],
     "devDependencies": {
         "@types/jest": "^28.1.8",
