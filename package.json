@@ -15,8 +15,8 @@
         "lint:fix": "npm run lint -- --fix",
         "lint": "eslint --ext .js .",
         "lint-staged": "lint-staged",
-        "generate-types": "tsc",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "generate-types": "tsc"
     },
     "author": {
         "email": "ozgurgorgulu54@gmail.com",
@@ -25,7 +25,6 @@
     },
     "keywords": [
         "acronym",
-        "akronim",
         "generator"
     ],
     "devDependencies": {
