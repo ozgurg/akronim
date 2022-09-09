@@ -18,6 +18,7 @@ const isOneWord = words => words.length === 1;
  * trimLastSeparator?: boolean
  * }} options
  * @returns {string}
+ * @throws Error
  */
 const akronim = (text, options = {}) => {
     text = validateText(text);
