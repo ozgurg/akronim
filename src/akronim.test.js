@@ -3,13 +3,13 @@ import { akronim } from "./akronim.js";
 describe("akronim", () => {
     it("should create correct acronym", () => {
         expect(akronim("Mustafa Kemal Atatürk")).toBe("MKA");
-        expect(akronim("Euro Truck Simulator 2")).toBe("ETS2");
-        expect(akronim("Game of Thrones")).toBe("GOT");
-        expect(akronim("God of War", { ignoreLowercaseWords: true })).toBe("GW");
-        expect(akronim("Watch_Dogs")).toBe("W_D");
+        expect(akronim("God of War")).toBe("GOW");
         expect(akronim("GitHub")).toBe("GH");
-        expect(akronim("Watch Dogs", { separateWith: "." })).toBe("W.D.");
-        expect(akronim("Watch Dogs", { separateWith: ".", trimLastSeparator: true })).toBe("W.D");
+        expect(akronim("Game of Thrones", { ignoreLowercaseWords: true })).toBe("GT");
+        expect(akronim("Grand Theft Auto", { separateWith: "." })).toBe("G.T.A.");
+        expect(akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true })).toBe("G.T.A");
+        expect(akronim("Euro Truck Simulator 2")).toBe("ETS2");
+        expect(akronim("Watch_Dogs")).toBe("W_D");
     });
 
     it("should trim spaces from 'text' and 'separateWith'", () => {

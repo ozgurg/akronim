@@ -24,14 +24,17 @@ akronim("Mustafa Kemal Atatürk");
 akronim("God of War");
 // "GOW"
 
+akronim("GitHub");
+// "GH"
+
 akronim("Game of Thrones", { ignoreLowercaseWords: true });
 // "GT"
 
-akronim("Watch Dogs", { separateWith: "." });
-// "W.D."
+akronim("Grand Theft Auto", { separateWith: "." });
+// "G.T.A."
 
-akronim("Watch Dogs", { separateWith: "_", trimLastSeparator: true });
-// "W_D"
+akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
+// "G.T.A"
 ```
 
 ## API
@@ -73,8 +76,8 @@ Type: <code>string | number</code>\
 Required: No
 
 ```javascript
-akronim("Watch Dogs", { separateWith: "." });
-// "W.D."
+akronim("Grand Theft Auto", { separateWith: "." });
+// "G.T.A."
 ```
 
 #### options.trimLastSeparator
@@ -86,8 +89,8 @@ Type: <code>boolean</code>\
 Required: No
 
 ```javascript
-akronim("Watch Dogs", { separateWith: "_", trimLastSeparator: true });
-// "W_D"
+akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
+// "G.T.A"
 ```
 
 ## License
