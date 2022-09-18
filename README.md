@@ -35,6 +35,9 @@ akronim("Grand Theft Auto", { separateWith: "." });
 
 akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
 // "G.T.A"
+
+akronim("To be announced", { capitalize: false });
+// "Tba"
 ```
 
 ## API
@@ -44,6 +47,8 @@ akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
 #### text
 
 Text to generate the acronym.
+
+**Note:** It will be trimmed with `.trim()`.
 
 Type: <code>string | number</code>\
 Required: Yes
@@ -71,6 +76,8 @@ akronim("Game of Thrones", { ignoreLowercaseWords: true });
 
 Separates the output with the given value.
 
+**Note:** It will be trimmed with `.trim()`.
+
 Default: <code>""</code>\
 Type: <code>string | number</code>\
 Required: No
@@ -82,7 +89,7 @@ akronim("Grand Theft Auto", { separateWith: "." });
 
 #### options.trimLastSeparator
 
-Trim the last separator in the output when using with `separateWith`.
+Trims the last separator in the output when using with `options.separateWith`.
 
 Default: <code>false</code>\
 Type: <code>boolean</code>\
@@ -91,6 +98,23 @@ Required: No
 ```javascript
 akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
 // "G.T.A"
+```
+
+#### options.capitalize
+
+Capitalizes all letters in the output.
+
+Default: <code>true</code>\
+Type: <code>boolean</code>\
+Required: No
+
+```javascript
+akronim("To be announced");
+akronim("To be announced", { capitalize: true });
+// "TBA"
+
+akronim("To be announced", { capitalize: false });
+// "Tba"
 ```
 
 ## License

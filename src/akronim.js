@@ -15,7 +15,8 @@ const isOneWord = words => words.length === 1;
  * @param {{
  * ignoreLowercaseWords?: boolean,
  * separateWith?: string | number,
- * trimLastSeparator?: boolean
+ * trimLastSeparator?: boolean,
+ * capitalize?: boolean
  * }} options
  * @returns {string}
  * @throws Error
@@ -26,7 +27,8 @@ const akronim = (text, options = {}) => {
     const {
         ignoreLowercaseWords,
         separateWith,
-        trimLastSeparator
+        trimLastSeparator,
+        capitalize
     } = validateOptions(options);
 
     let acronym = "";
@@ -58,7 +60,10 @@ const akronim = (text, options = {}) => {
                 acronym += separateWith;
             }
         }
-        acronym = acronym.toUpperCase();
+
+        if (capitalize) {
+            acronym = acronym.toUpperCase();
+        }
     }
 
     if (separateWith && trimLastSeparator) {
@@ -85,7 +90,8 @@ const validateText = text => {
 const validateOptions = ({
     ignoreLowercaseWords = false,
     separateWith = "",
-    trimLastSeparator = false
+    trimLastSeparator = false,
+    capitalize = true
 }) => {
     if (!isBoolean(ignoreLowercaseWords)) {
         throw new Error("\"ignoreLowercaseWords\" must be a boolean.");
@@ -99,12 +105,17 @@ const validateOptions = ({
         throw new Error("\"trimLastSeparator\" must be a boolean.");
     }
 
+    if (!isBoolean(capitalize)) {
+        throw new Error("\"capitalize\" must be a boolean.");
+    }
+
     separateWith = separateWith.toString().trim();
 
     return {
         ignoreLowercaseWords,
         separateWith,
-        trimLastSeparator
+        trimLastSeparator,
+        capitalize
     };
 };
 
