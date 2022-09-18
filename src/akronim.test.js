@@ -68,7 +68,7 @@ describe("akronim", () => {
                 });
 
                 it("should not throw error if 'ignoreLowercaseWords', 'trimLastSeparator' or 'capitalize' is valid", () => {
-                    // "undefined" causes default value to be used
+                    // "undefined" makes default value to be used
                     [undefined, true, false].forEach(testValue => {
                         expect(() => {
                             akronim("GitHub", { ...options, ignoreLowercaseWords: testValue });

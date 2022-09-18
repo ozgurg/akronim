@@ -85,7 +85,7 @@ akronim("Grand Theft Auto", { separateWith: "." });
 
 #### options.trimLastSeparator
 
-Trim the last separator in the output when using with `separateWith`.
+Trims the last separator in the output when using with `options.separateWith`.
 
 Default: <code>false</code>\
 Type: <code>boolean</code>\
