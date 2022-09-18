@@ -10,6 +10,8 @@ describe("akronim", () => {
         expect(akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true })).toBe("G.T.A");
         expect(akronim("Euro Truck Simulator 2")).toBe("ETS2");
         expect(akronim("Watch_Dogs")).toBe("W_D");
+        expect(akronim("To be announced", { capitalize: false })).toBe("Tba");
+        expect(akronim("To be announced", { capitalize: false, ignoreLowercaseWords: true })).toBe("T");
     });
 
     it("should trim spaces from 'text' and 'separateWith'", () => {
@@ -44,10 +46,11 @@ describe("akronim", () => {
             const options = {
                 ignoreLowercaseWords: false,
                 separateWith: "",
-                trimLastSeparator: false
+                trimLastSeparator: false,
+                capitalize: true
             };
 
-            describe("ignoreLowercaseWords|trimLastSeparator", () => {
+            describe("ignoreLowercaseWords|trimLastSeparator|capitalize", () => {
                 it("should throw error if 'ignoreLowercaseWords' or 'trimLastSeparator' is invalid", () => {
                     [null, {}, [], 0, 1, -1, NaN, Infinity, "", "A"].forEach(testValue => {
                         expect(() => {
@@ -57,10 +60,14 @@ describe("akronim", () => {
                         expect(() => {
                             akronim("GitHub", { ...options, trimLastSeparator: testValue });
                         }).toThrowError("\"trimLastSeparator\" must be a boolean.");
+
+                        expect(() => {
+                            akronim("GitHub", { ...options, capitalize: testValue });
+                        }).toThrowError("\"capitalize\" must be a boolean.");
                     });
                 });
 
-                it("should not throw error if 'ignoreLowercaseWords' or 'trimLastSeparator' is valid", () => {
+                it("should not throw error if 'ignoreLowercaseWords', 'trimLastSeparator' or 'capitalize' is valid", () => {
                     // "undefined" causes default value to be used
                     [undefined, true, false].forEach(testValue => {
                         expect(() => {
@@ -69,6 +76,10 @@ describe("akronim", () => {
 
                         expect(() => {
                             akronim("GitHub", { ...options, trimLastSeparator: testValue });
+                        }).not.toThrow();
+
+                        expect(() => {
+                            akronim("GitHub", { ...options, capitalize: testValue });
                         }).not.toThrow();
                     });
                 });

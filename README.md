@@ -35,6 +35,9 @@ akronim("Grand Theft Auto", { separateWith: "." });
 
 akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
 // "G.T.A"
+
+akronim("To be announced", { capitalize: false });
+// "Tba"
 ```
 
 ## API
@@ -91,6 +94,23 @@ Required: No
 ```javascript
 akronim("Grand Theft Auto", { separateWith: ".", trimLastSeparator: true });
 // "G.T.A"
+```
+
+#### options.capitalize
+
+Capitalizes all letters in the output.
+
+Default: <code>true</code>\
+Type: <code>boolean</code>\
+Required: No
+
+```javascript
+akronim("To be announced");
+akronim("To be announced", { capitalize: true });
+// "TBA"
+
+akronim("To be announced", { capitalize: false });
+// "Tba"
 ```
 
 ## License
