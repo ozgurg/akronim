@@ -1,6 +1,6 @@
 {
     "name": "akronim",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "An acronym generator with useful options.",
     "license": "MIT",
     "type": "module",
