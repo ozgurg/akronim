@@ -48,6 +48,8 @@ akronim("To be announced", { capitalize: false });
 
 Text to generate the acronym.
 
+**Note:** It will be trimmed with `.trim()`.
+
 Type: <code>string | number</code>\
 Required: Yes
 
@@ -73,6 +75,8 @@ akronim("Game of Thrones", { ignoreLowercaseWords: true });
 #### options.separateWith
 
 Separates the output with the given value.
+
+**Note:** It will be trimmed with `.trim()`.
 
 Default: <code>""</code>\
 Type: <code>string | number</code>\
