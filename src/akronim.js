@@ -34,9 +34,10 @@ const akronim = (text, options = {}) => {
     let acronym = "";
 
     const words = splitWords(text);
-    const letters = splitLetters(text);
 
     if (isOneWord(words)) {
+        const letters = splitLetters(text);
+
         for (let i = 0; i < letters.length; i++) {
             const letter = letters[i];
 
