@@ -5,6 +5,7 @@ const isString = value => typeof value === "string";
 const isBoolean = value => typeof value === "boolean";
 const isStringOrNumber = value => isString(value) || isNumber(value);
 const isEmpty = value => value.length === 0;
+
 const splitWords = value => value.split(" ");
 const splitLetters = value => value.split("");
 const trimLastCharacter = value => value.slice(0, -1);
@@ -34,15 +35,19 @@ const akronim = (text, options = {}) => {
     let acronym = "";
 
     const words = splitWords(text);
-    const letters = splitLetters(text);
 
     if (isOneWord(words)) {
+        const letters = splitLetters(text);
+
         for (let i = 0; i < letters.length; i++) {
             const letter = letters[i];
 
-            if (!isUppercase(letter)) continue;
+            if (!isUppercase(letter)) {
+                continue;
+            }
 
             acronym += letter;
+
             if (separateWith) {
                 acronym += separateWith;
             }
@@ -53,9 +58,12 @@ const akronim = (text, options = {}) => {
         for (let i = 0; i < words.length; i++) {
             const firstLetterOfWord = words[i][0];
 
-            if (ignoreLowercaseWords && isLowercase(firstLetterOfWord)) continue;
+            if (ignoreLowercaseWords && isLowercase(firstLetterOfWord)) {
+                continue;
+            }
 
             acronym += firstLetterOfWord;
+
             if (separateWith) {
                 acronym += separateWith;
             }
